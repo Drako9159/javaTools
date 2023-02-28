@@ -15,6 +15,26 @@ public class Example1 {
         lista.add(variable3);
         lista.add(variable4);
 
+        // Change element
+        lista.set(1, "Ejemplo alterado");
+
+        // Check size
+        lista.size();
+
+        // iterate
+        for(int i = 0; i< lista.size(); i++){
+            System.out.println(lista.get(i));
+        }
+        // for each
+        for (String clase : lista){
+            System.out.println(clase);
+        }
+        // new version for Each
+        lista.forEach(clase -> {
+            System.out.println(clase);
+        });
+
+
         System.out.println(lista);
     }
 
