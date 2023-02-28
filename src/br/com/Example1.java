@@ -1,6 +1,10 @@
 package br.com;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Example1 {
     public static void main(String[] args) {
@@ -33,6 +37,15 @@ public class Example1 {
         lista.forEach(clase -> {
             System.out.println(clase);
         });
+        // order by abc
+        Collections.sort(lista);
+        // order by cba
+        Collections.sort(lista, Collections.reverseOrder());
+        // new version sort
+        lista.sort(Comparator.naturalOrder());
+        lista.sort(Comparator.reverseOrder());
+        // another form
+        List<String> listaOrdenada = lista.stream().sorted().collect(Collectors.toList());
 
 
         System.out.println(lista);
