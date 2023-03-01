@@ -1,9 +1,7 @@
 package br.com;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Example2Main {
     public static void main(String[] args) {
@@ -30,5 +28,22 @@ public class Example2Main {
         // Collections.sort(example.Comparator.comparing(Example2::getName));
 
         System.out.println(example);
+
+        // suma los teimpos del curso
+        System.out.println(example.stream().mapToInt(Example2::getTime).sum());
+        // get max number
+        System.out.println(example.stream().mapToInt(Example2::getTime).max().getAsInt());
+        // filter witout Espanhol
+        System.out.println(example.stream().filter(name -> !name.getName().equalsIgnoreCase("Espanhol")).mapToInt(Example2::getTime).max().getAsInt());
+        // get average
+        System.out.println(example.stream().mapToInt(Example2::getTime).average().getAsDouble());
+        // get min number
+        System.out.println(example.stream().mapToInt(Example2::getTime).min());
+
+        // agroup
+        Map<String, List<Example2>> groupCurso = example.stream().collect(Collectors.groupingBy(Example2::getName));
+        groupCurso.forEach((key, value) -> System.out.println(key + "." +value.size()));
+        // parallelStream for more eficiente stream
+        System.out.println(example.parallelStream().mapToInt(Example2::getTime).sum());
     }
 }
