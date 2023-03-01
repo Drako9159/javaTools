@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Curso {
@@ -8,6 +9,7 @@ public class Curso {
     private String name;
     private int time;
     private List<Clase> claseList = new ArrayList<>();
+    //private List<Aula> AulaList = new ArrayList<>();
 
     public Curso(String name, int time) {
         this.name = name;
@@ -36,6 +38,11 @@ public class Curso {
     public List<Clase> getClaseList() {
         return claseList;
     }
+    /*
+    // Add unmodificable list in class Aula
+    public List<Aula> getAulaList(){
+        return Collections.unmodifiableList(aulaList);
+    }*/
     public void setClaseList(List<Clase> claseList) {
         this.claseList = claseList;
     }
