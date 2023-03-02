@@ -1,13 +1,18 @@
 package br.com;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Alumno {
     private String name;
     private String codigo;
+
 
     public Alumno(String name, String codigo) {
         this.name = name;
         this.codigo = codigo;
     }
+
 
     public String getName() {
         return name;

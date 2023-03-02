@@ -1,8 +1,8 @@
-package model;
+package br.com;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import model.Clase;
+
+import java.util.*;
 
 public class Curso {
 
@@ -10,6 +10,8 @@ public class Curso {
     private int time;
     private List<Clase> claseList = new ArrayList<>();
     //private List<Aula> AulaList = new ArrayList<>();
+    private Map<String, Alumno> alumnoMap= new HashMap<>();
+    private Collection<Alumno> alumnos = new HashSet<>();
 
 
     public Curso(String name, int time) {
@@ -49,6 +51,24 @@ public class Curso {
     }
     public void addClase(Clase clase){
         this.claseList.add(clase);
+    }
+    public void addAlumno(Alumno alumno){ this.alumnos.add(alumno); this.alumnoMap.put(alumno.getCodigo(), alumno); }
+    public boolean verificarAlumno(Alumno alumno){ return this.alumnos.contains(alumno); }
+
+    public Collection<Alumno> getAlumnos() {
+        return alumnos;
+    }
+
+    public Map<String, Alumno> getAlumnoMap() {
+        return alumnoMap;
+    }
+
+    public void setAlumnoMap(Map<String, Alumno> alumnoMap) {
+        this.alumnoMap = alumnoMap;
+    }
+
+    public void setAlumnos(Collection<Alumno> alumnos) {
+        this.alumnos = alumnos;
     }
 
     @Override

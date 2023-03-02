@@ -5,6 +5,7 @@ import br.com.Example2;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,6 +16,11 @@ public class Main {
         example.add(example1);
 
         System.out.println(example1.getClaseList());
+
+        Iterator<Curso> alumnoIterator = example.iterator();
+        while (alumnoIterator.hasNext()){
+            System.out.println(alumnoIterator.next());
+        }
 
     }
 }

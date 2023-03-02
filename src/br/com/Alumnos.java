@@ -1,8 +1,6 @@
 package br.com;
 
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Alumnos {
     public static void main(String[] args) {
@@ -44,5 +42,13 @@ public class Alumnos {
         listaAlumnos.removeIf(alumno -> "Antonio".equalsIgnoreCase(alumno));
 
         Alumno alumnoNuevo = new Alumno("luisillo", "200");
+
+        Optional<Alumno> alumno = listaAlumnos2.stream().filter(a -> "003".equalsIgnoreCase(a.getCodigo())).findFirst();
+        if(alumno.isPresent()){
+            System.out.println(alumno.get());
+        }
+
+
+
     }
 }
